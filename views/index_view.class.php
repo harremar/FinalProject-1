@@ -13,10 +13,13 @@ class SausageView {
         <html>
         <head>
             <title>Sausage MVC List All Sausages</title>
-            <link type="text/css" rel="stylesheet" href="includes/style.css" />
+            <link type="text/css" rel="stylesheet" href="includes/app_style.css" />
         </head>
         <body>
-        <h2>Sausages in our inventory</h2>
+        <div class="proj-header">
+            <h2>Sausages in our inventory</h2>
+        </div>
+
         <table border="0">
             <tr>
                 <th>ID</th>
