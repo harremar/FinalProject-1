@@ -17,4 +17,6 @@ return array(
     'SausageError' => $baseDir . '/views/error/sausage_error.class.php',
     'SausageModel' => $baseDir . '/models/sausageModel.class.php',
     'SausageView' => $baseDir . '/views/index_view.class.php',
+    'WelcomeController' => $baseDir . '/controllers/welcome_controller.class.php',
+    'WelcomeIndex' => $baseDir . '/views/welcome.index.class.php',
 );

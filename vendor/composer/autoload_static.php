@@ -18,6 +18,8 @@ class ComposerStaticIniteb1a0619c97dc056ae46e1ca8dbe09d0
         'SausageError' => __DIR__ . '/../..' . '/views/error/sausage_error.class.php',
         'SausageModel' => __DIR__ . '/../..' . '/models/sausageModel.class.php',
         'SausageView' => __DIR__ . '/../..' . '/views/index_view.class.php',
+        'WelcomeController' => __DIR__ . '/../..' . '/controllers/welcome_controller.class.php',
+        'WelcomeIndex' => __DIR__ . '/../..' . '/views/welcome.index.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
