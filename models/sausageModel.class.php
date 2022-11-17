@@ -12,7 +12,7 @@ class SausageModel
 
     public function  __construct()
     {
-        $this->db = Database2::getInstance();
+        $this->db = Database::getInstance();
         $this->dbConnection = $this->db->getConnection();
 
     }
