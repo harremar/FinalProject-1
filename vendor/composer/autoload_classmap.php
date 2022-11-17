@@ -6,8 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ComposerAutoloaderIniteb1a0619c97dc056ae46e1ca8dbe09d0' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticIniteb1a0619c97dc056ae46e1ca8dbe09d0' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Database' => $baseDir . '/application/database.class.php',
+    'Dispatcher' => $baseDir . '/application/dispatcher.class.php',
     'Sausage' => $baseDir . '/sausage.class.php',
     'SausageController' => $baseDir . '/controllers/sausage_controller.class.php',
     'SausageError' => $baseDir . '/views/error/sausage_error.class.php',

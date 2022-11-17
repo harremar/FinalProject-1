@@ -1,3 +1,4 @@
+<?php
 class WelcomeIndex extends SausageView {
 
     public function display($sausages) {
