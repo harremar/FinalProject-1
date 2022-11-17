@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2022 at 12:17 AM
+-- Generation Time: Nov 17, 2022 at 05:30 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -31,7 +31,7 @@ CREATE TABLE `orders` (
   `order_id` int(6) NOT NULL,
   `user_id` int(6) NOT NULL,
   `order_lines` int(10) NOT NULL,
-  `total_price` int(64) NOT NULL COMMENT 'Total price in cents',
+  `total_price` varchar(64) NOT NULL,
   `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,11 +40,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `order_lines`, `total_price`, `order_date`) VALUES
-(1, 3, 3, 570, '2022-11-10'),
-(2, 3, 3, 570, '2022-11-18'),
-(3, 2, 1, 145, '2022-11-18'),
-(4, 1, 1, 145, '2022-11-19'),
-(5, 5, 2, 1160, '2022-11-20');
+(1, 3, 3, '5.70', '2022-11-10'),
+(2, 3, 3, '5.70', '2022-11-18'),
+(3, 2, 1, '1.45', '2022-11-18'),
+(4, 1, 1, '1.45', '2022-11-19'),
+(5, 5, 2, '11.60', '2022-11-20');
 
 -- --------------------------------------------------------
 
@@ -54,10 +54,10 @@ INSERT INTO `orders` (`order_id`, `user_id`, `order_lines`, `total_price`, `orde
 
 CREATE TABLE `orders_line_items` (
   `orderline_id` int(255) NOT NULL,
-  `order_id` int(255) NOT NULL,
-  `sausage_id` int(255) NOT NULL,
+  `order_id` int(6) NOT NULL,
+  `sausage_id` int(6) NOT NULL,
   `number_ordered` int(255) NOT NULL,
-  `line_price` varchar(255) NOT NULL COMMENT 'Total price of the line in cents'
+  `line_price` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -65,16 +65,16 @@ CREATE TABLE `orders_line_items` (
 --
 
 INSERT INTO `orders_line_items` (`orderline_id`, `order_id`, `sausage_id`, `number_ordered`, `line_price`) VALUES
-(1, 1, 1, 10, '190'),
-(2, 1, 2, 10, '190'),
-(3, 1, 5, 10, '290'),
-(4, 2, 1, 10, '190'),
-(5, 2, 2, 10, '190'),
-(6, 2, 5, 10, '290'),
-(7, 3, 3, 5, '145'),
-(8, 4, 5, 5, '145'),
-(9, 5, 3, 20, '580'),
-(10, 5, 4, 20, '580');
+(1, 1, 1, 10, '1.90'),
+(2, 1, 2, 10, '1.90'),
+(3, 1, 5, 10, '2.90'),
+(4, 2, 1, 10, '1.90'),
+(5, 2, 2, 10, '1.90'),
+(6, 2, 5, 10, '2.90'),
+(7, 3, 3, 5, '1.45'),
+(8, 4, 5, 5, '1.45'),
+(9, 5, 3, 20, '5.80'),
+(10, 5, 4, 20, '5.80');
 
 -- --------------------------------------------------------
 
@@ -84,8 +84,8 @@ INSERT INTO `orders_line_items` (`orderline_id`, `order_id`, `sausage_id`, `numb
 
 CREATE TABLE `sausage` (
   `sausage_id` int(6) NOT NULL,
-  `sausage_name` text NOT NULL,
-  `price` int(32) NOT NULL COMMENT 'Price of a single item in cents',
+  `sausage_name` varchar(64) NOT NULL,
+  `price` varchar(32) NOT NULL,
   `stock_quantity` int(6) NOT NULL,
   `sausage_description` longtext NOT NULL,
   `sausage_heat` int(2) NOT NULL
@@ -96,11 +96,20 @@ CREATE TABLE `sausage` (
 --
 
 INSERT INTO `sausage` (`sausage_id`, `sausage_name`, `price`, `stock_quantity`, `sausage_description`, `sausage_heat`) VALUES
-(1, 'Original Beef Hot Dog', 19, 999, 'Your general hot dog composed of simple spices and beef products.', 1),
-(2, 'Original Pork Hot Dog', 19, 999, 'Your general hot dog composed of simple spices and pork products.', 1),
-(3, 'Andouille', 29, 999, 'A sausage whose recipe hails from France. This particular kind utilizes pork products in a course grind, onions, and a series of spices that give it a moderate heat.', 2),
-(4, 'Pork Bratwurst', 29, 999, 'A sausage whose recipe hails from Germany. This sausage uses finely ground pork and seasoning to give it a mild heat.', 1),
-(5, 'Beef Bratwurst', 29, 999, 'A sausage whose recipe hails from Germany. This sausage uses finely ground beef and  seasoning to give it a mild heat.', 1);
+(1, 'Original Beef Hot Dog', '0.19', 999, 'Your general hot dog composed of simple spices and beef products.', 1),
+(2, 'Original Pork Hot Dog', '0.19', 999, 'Your general hot dog composed of simple spices and pork products.', 1),
+(3, 'Andouille', '0.29', 999, 'A sausage whose recipe hails from France. This particular kind utilizes pork products in a course grind, onions, and a series of spices that give it a moderate heat.', 3),
+(4, 'Pork Bratwurst', '0.29', 999, 'A sausage whose recipe hails from Germany. This sausage uses finely ground pork and seasoning to give it a mild heat.', 1),
+(5, 'Beef Bratwurst', '0.29', 999, 'A sausage whose recipe hails from Germany. This sausage uses finely ground beef and  seasoning to give it a mild heat.', 1),
+(6, 'Spanish Chorizo', '0.29', 999, 'A pork sausage that utilizes a mix of herbs and spices which prominently features garlic, paprika, and white wine. While it is not known to be as hot as its Mexican counterpart, it is relatively spicy. Unlike its Mexican counterpart, this sausage does not need to be cooked before eating.', 3),
+(7, 'Italian Sausage', '0.24', 999, 'Italian sausages normally feature a wide array of flavors, but tend towards the sweet and hot. The spice mix features a sweet basil as well as anise and fennel to achieve this mixture. These sausages feature a pork meat base.', 4),
+(8, 'Mexican Chorizo', '0.29', 999, 'This pork sausage is quite hot, but it doesn\'t only sport heat. It uses a mix of spices, herbs, vinegar, and different types of chili peppers to achieve its flavor profile. Unlike it\'s Spanish counterpart, this sausage must be cooked before eating.', 4),
+(9, 'Longaniza', '0.29', 999, 'This pork sausage comes from the Argentina area of South America and has a sweet and salty flavor profile. The main ingredient causing this flavoring is the use of ground anise seeds along with a blend of herbs and spices. This sausage is also unusually long compared to many other types of sausages.', 2),
+(10, 'Sai Ua', '0.24', 999, 'This pork sausage comes from Thailand and is another long sausage. The middle of the line heat and unique taste of this sausage comes from the use of red curry paste in its blend of spices and herbs.', 2),
+(11, 'Lucban Longganisa', '0.29', 999, 'This sausage is another unusually long type of sausage, however it and its sibling varieties all hail from the Philippines. This version of the sausage contains pork, but it is common to find them made with beef, chicken, and even types of fish. This particular version of Longganisa uses a large amount of garlic in its spice and herb blend to achieve its flavor.', 2),
+(12, 'Guagua Longganisa', '0.29', 999, 'This sausage is another unusually long type of sausage, however it and its sibling varieties all hail from the Philippines. This version of the sausage contains pork, but it is common to find them made with beef, chicken, and even types of fish. This particular version of Longganisa ends up being salty enough that some people describe it as almost sour!', 2),
+(13, 'Longganisa Hamonado', '0.29', 999, 'This sausage is another unusually long type of sausage, however it and its sibling varieties all hail from the Philippines. This version of the sausage contains pork, but it is common to find them made with beef, chicken, and even types of fish. This particular version of Longganisa is much sweeter than the other varieties!', 2),
+(14, 'Laulau', '0.29', 999, 'This sausage comes from the islands of Hawaii and features both pork and fish. Unlike other sausages, this one features a wrapping made of Taro leaves that adds to its flavor!', 2);
 
 -- --------------------------------------------------------
 
@@ -187,7 +196,7 @@ ALTER TABLE `orders_line_items`
 -- AUTO_INCREMENT for table `sausage`
 --
 ALTER TABLE `sausage`
-  MODIFY `sausage_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sausage_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
