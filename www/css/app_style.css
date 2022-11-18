@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6, p {
 .products{
     display: flex;
     flex-wrap: wrap;
+
     /*background-color: red;*/
     width: 100%;
 }
@@ -39,7 +40,7 @@ h1, h2, h3, h4, h5, h6, p {
     min-height: 470px;
     border-radius: 4px;
     box-shadow: 0px 5px 10px #ccc;
-    margin: 10px;
+    margin: 10px auto;
     position: relative;
 }
 .productItemImage{
