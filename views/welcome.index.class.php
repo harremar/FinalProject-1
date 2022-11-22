@@ -5,6 +5,15 @@ class WelcomeIndex extends SausageView {
         //display page header
         parent::displayHeader("One Stop Sausage Home ");
         ?>
+        <div id="searchbar" class="searchBar">
+            <form method="get" action="search_class.php">
+                <input type="text" name="query-terms" id="searchtextbox" class="searchBox" placeholder="Search items..." autocomplete="off">
+                <input type="submit" class="searchButton" value="Go" />
+            </form>
+            <!-- div block to display auto suggestion items -->
+            <div id="suggestionDiv"></div>
+
+        </div>
           <div class="products">
 <!--                <div class="productItem">-->
 <!--                <div class="productItemImage">-->
@@ -44,3 +53,4 @@ class WelcomeIndex extends SausageView {
     }
 
 }
+
