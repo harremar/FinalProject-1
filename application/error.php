@@ -1,8 +1,9 @@
 
+
 <?php
 /**
- * Author: Louie Zhu
- * Date: 3/28/2022
+ * Author: Group 4
+ * Date: 11/22/2022
  * Name: error.php
  * Description: this script displays an error message. This script is globally available throughout the application.
  *     The message to be displayed is passed to this script via variable $message. The dispatcher uses this to
@@ -18,9 +19,6 @@ SausageView::displayHeader($page_title);
     <hr>
     <table style = "width: 100%; border: none">
         <tr>
-            <td style = "vertical-align: middle; text-align: center; width:100px">
-                <img src = '<?= BASE_URL ?>/www/img/error.jpg' style = "width: 80px; border: none"/>
-            </td>
             <td style = "text-align: left; vertical-align: top;">
                 <h3> Sorry, but an error has occurred.</h3>
                 <div style = "color: red">
@@ -32,7 +30,7 @@ SausageView::displayHeader($page_title);
         </tr>
     </table>
     <br><br><br><br><hr>
-    <a href="<?= BASE_URL ?>/movie/index">Back to movie list</a>
+    <a href="<?= BASE_URL ?>/index.php">Back to Welcome Page</a>
 
 <?php
 //display footer
