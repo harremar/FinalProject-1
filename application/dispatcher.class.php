@@ -1,9 +1,10 @@
 <?php
 
-//Author: Elijah Sample
-//Date: 11/17/2022
-//Filename: dispatcher.class.php
-//Description: Creates the dispatcher class to use RESTful URL
+/**Author: Elijah Sample
+ * Date: 11/17/2022
+ * Filename: dispatcher.class.php
+ * Description: Creates the dispatcher class to use RESTful URL
+ */
 
 class Dispatcher {
 

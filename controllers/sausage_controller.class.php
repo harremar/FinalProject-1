@@ -14,14 +14,14 @@ class SausageController
         $this->toy_model = new SausageModel();
     }
 
-    //list all toys
+    //list all sausages
     public function all(){
-        //get all the toys
+        //get all the sausages
         $toys=$this->toy_model->getSausages();
 
         //handle errors
         if(!$toys){
-            $this->error("No toy was found");
+            $this->error("No sausage was found");
         }
 
         //display all the toys

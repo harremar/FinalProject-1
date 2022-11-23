@@ -5,7 +5,6 @@
  * Date: 11/14/2022
  * File: database.class.php
  * Description: Database class
- * 
  */
 
 class Database
@@ -53,7 +52,7 @@ class Database
         return $this->objDBConnection;
     }
 
-    //returns the name of the table storing books
+    //returns the name of the table storing sausages
     public function getTable()
     {
         return $this->param['tblSausage'];

@@ -6,7 +6,7 @@
  * Description:
  */
 class WelcomeController {
-    //put your code here
+    //code for the welcome controller
     public function index() {
         $view = new WelcomeIndex();
         $model = new SausageModel();

@@ -18,8 +18,8 @@ class SausageModel
     }
 
     /*
-  * this method retrieves all toys from the database and
-  * returns an array of Toy objects if successful or false if failed.
+  * this method retrieves all sausages from the database and
+  * returns an array of sausages objects if successful or false if failed.
   */
     public function getSausages() {
         //SQL select statement
@@ -29,7 +29,7 @@ class SausageModel
         $query = $this->dbConnection->query($sql);
 
         if ($query && $query->num_rows > 0) {
-            //array to store all toys
+            //array to store all sausages
             $sausages = array();
 
             //loop through all rows
@@ -43,7 +43,7 @@ class SausageModel
 
                 );
 
-                //push the toy into the array
+                //push the sausage into the array
                 $sausages[] = $sausage;
             }
             return $sausages;
