@@ -28,16 +28,19 @@ class SausageView {
         <div id="top"></div>
         <div id="wrapper">
         <div id="banner" class="projheader">
-            <a href="<?= BASE_URL ?>/index.php" style="text-decoration: none" title="One Stop Sausage">
-                <div id="left">
+            <div id="left">
                     <span style='color: #000; font-size: 36pt; font-weight: bold; vertical-align: top'>
                                     One Stop Sausage
                                 </span>
-                    <div style='color: #000; font-size: 14pt; font-weight: bold'>Check out our list of Sausages</div>
-                </div>
-            </a>
-            <div id="right">
+                <div style='color: #000; font-size: 14pt; font-weight: bold'>Check out our list of Sausages</div>
             </div>
+            <div id="right">
+                <button class="loginInButton"> Login In</button>
+            </div>
+            <div href="<?= BASE_URL ?>/index.php" style="text-decoration: none" title="One Stop Sausage">
+
+            </div>
+
         </div>
         <?php
     }//end of displayHeader function
@@ -56,3 +59,4 @@ class SausageView {
     } //end of displayFooter function
 }
 ?>
+
