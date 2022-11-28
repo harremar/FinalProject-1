@@ -3,7 +3,7 @@
  * Author: Aiden Eichenour
  * date: 11/15/22
  * File: sausage_detail.class.php
- * Description: view that displays the details
+ * Description:
  */
 
 class Details extends SausageView
@@ -20,7 +20,6 @@ class Details extends SausageView
         $heat = $sausage->getHeat();
         $stock = $sausage->getStock();
 
-      //NOTE-- only updating the id on the page NEED TO FIX
         echo " ID: ",$id;
 //        echo " <br/> Name: ",$sausageName;
 //        echo " <br/> Description: ",$description;
@@ -54,3 +53,4 @@ class Details extends SausageView
         parent::displayFooter();
 
     }
+}

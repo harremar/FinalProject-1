@@ -90,43 +90,43 @@ class SausageModel
         return false;
     }
 
-//    //search the database for movies that match words in titles. Return an array of movies if succeed; false otherwise.
-//    public function search_items($terms) {
-//        $terms = explode(" ", $terms); //explode multiple terms into an array
-//        //select statement for AND serach
-//        $sql = "SELECT * FROM " . $this->tblMovie . "," . $this->tblMovieRating .
-//            " WHERE " . $this->tblMovie . ".rating=" . $this->tblMovieRating . ".rating_id AND (1";
-//
-//        foreach ($terms as $term) {
-//            $sql .= " AND title LIKE '%" . $term . "%'";
-//        }
-//        $sql .= ")";
-//
-//        //execute the query
-//        $query = $this->dbConnection->query($sql);
-//
-//        // the search failed, return false.
-//        if (!$query) {
-//            return false;
-//        }
-//        //search succeeded, but no movie was found.
-//        if ($query->num_rows == 0) {
-//            return 0;
-//        }
-//        //search succeeded, and found at least 1 movie found.
-//        //create an array to store all the returned movies
-//        $movies = array();
-//
-//        //loop through all rows in the returned recordsets
-//        while ($obj = $query->fetch_object()) {
-//            $movie = new Movie($obj->title, $obj->rating, $obj->release_date, $obj->director, $obj->image, $obj->description);
-//
-//            //set the id for the movie
-//            $movie->setId($obj->id);
-//
-//            //add the movie into the array
-//            $movies[] = $movie;
-//        }
-//        return $movies;
-//    }
+    //search the database for movies that match words in titles. Return an array of movies if succeed; false otherwise.
+    public function search_items($terms) {
+        $terms = explode(" ", $terms); //explode multiple terms into an array
+        //select statement for AND search
+        $sql = "SELECT * FROM " . $this->db->getSausageTable() . "AND (1";
+
+        foreach ($terms as $term) {
+            $sql .= " AND title LIKE '%" . $term . "%'";
+        }
+        $sql .= ")";
+
+        //execute the query
+        $query = $this->dbConnection->query($sql);
+
+        // the search failed, return false.
+        if (!$query) {
+            return false;
+        }
+        //search succeeded, but no movie was found.
+        if ($query->num_rows == 0) {
+            return 0;
+        }
+        //search succeeded, and found at least 1 movie found.
+        //create an array to store all the returned movies
+        $items = array();
+
+        //loop through all rows in the returned recordsets
+        while ($obj = $query->fetch_object()) {
+            //create an item object --building from constructor on sausage.class.php
+            $item = new Sausage($obj->sausage_id, $obj->sausage_name, $obj->price, $obj->stock_quantity, $obj->sausage_description, $obj->sausage_heat);
+
+            //set the id for the movie
+            $item->setId($obj->sausage_id);
+
+            //add the movie into the array
+            $items[] = $item;
+        }
+        return $items;
+    }
 }

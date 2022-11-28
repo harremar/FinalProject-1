@@ -35,7 +35,10 @@ class SausageView {
                 <div style='color: #000; font-size: 14pt; font-weight: bold'>Check out our list of Sausages</div>
             </div>
             <div id="right">
-                <button class="loginInButton"> Login In</button>
+                <a href='<?= BASE_URL ?>/welcome/login'>
+                    <button class="loginInButton"> Login In</button>
+                </a>
+
             </div>
             <div href="<?= BASE_URL ?>/index.php" style="text-decoration: none" title="One Stop Sausage">
 
@@ -59,4 +62,3 @@ class SausageView {
     } //end of displayFooter function
 }
 ?>
-

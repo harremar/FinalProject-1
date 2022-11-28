@@ -14,7 +14,7 @@ return array(
     'Details' => $baseDir . '/views/detail/sausage_detail.class.php',
     'Dispatcher' => $baseDir . '/application/dispatcher.class.php',
     'Login' => $baseDir . '/views/login.class.php',
-    'Sausage' => $baseDir . '/sausage.class.php',
+    'Sausage' => $baseDir . '/models/sausage.class.php',
     'SausageController' => $baseDir . '/controllers/sausage_controller.class.php',
     'SausageError' => $baseDir . '/views/error/sausage_error.class.php',
     'SausageModel' => $baseDir . '/models/sausageModel.class.php',

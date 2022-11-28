@@ -30,13 +30,6 @@ class WelcomeController {
         $view->display();
     }
 
-    //search
-    public function search(){
-        //display
-        $view = new Search();
-        $view->display();
-    }
-
     //details
     public function details($id){
         //retrieve details of the item
@@ -50,6 +43,30 @@ class WelcomeController {
         //display
         $view = new Details();
         $view->display($item);
+    }
+
+    //search movies
+    public function search() {
+        //retrieve query terms from search form
+        $query_terms = trim($_GET['query-terms']);
+
+        //if search term is empty, list all movies
+        if ($query_terms == "") {
+            $this->index();
+        }
+
+        //search the database for matching movies
+        $items = $this->item_model->search_items($query_terms);
+
+        if ($items === false) {
+            //handle error
+            $message = "An error has occurred.";
+            $this->error($message);
+            return;
+        }
+        //display matched movies
+        $search = new Search();
+        $search->display($query_terms, $items);
     }
 
 

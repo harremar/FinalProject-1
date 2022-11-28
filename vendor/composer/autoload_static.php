@@ -15,7 +15,7 @@ class ComposerStaticIniteb1a0619c97dc056ae46e1ca8dbe09d0
         'Details' => __DIR__ . '/../..' . '/views/detail/sausage_detail.class.php',
         'Dispatcher' => __DIR__ . '/../..' . '/application/dispatcher.class.php',
         'Login' => __DIR__ . '/../..' . '/views/login.class.php',
-        'Sausage' => __DIR__ . '/../..' . '/sausage.class.php',
+        'Sausage' => __DIR__ . '/../..' . '/models/sausage.class.php',
         'SausageController' => __DIR__ . '/../..' . '/controllers/sausage_controller.class.php',
         'SausageError' => __DIR__ . '/../..' . '/views/error/sausage_error.class.php',
         'SausageModel' => __DIR__ . '/../..' . '/models/sausageModel.class.php',
