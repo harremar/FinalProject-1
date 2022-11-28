@@ -53,7 +53,7 @@ class Database
     }
 
     //returns the name of the table storing sausages
-    public function getTable()
+    public function getSausageTable()
     {
         return $this->param['tblSausage'];
     }
