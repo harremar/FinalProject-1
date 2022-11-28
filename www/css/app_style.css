@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 16px
 }
 
-/*Styling for header*/
+/*====================================Styling for header=========================*/
 .projheader {
     width: 100%;
     height: 100px;
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #eeeeee;
 }
 
-/*Styling for footer*/
+/*===================================Styling for footer====================================*/
 .foot {
     font-size: 14px;
     text-align: center;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #eeeeee;
 }
 
-/*STYLING FOR SEARCH BOX*/
+/*================================STYLING FOR SEARCH BOX===============================*/
 .searchBox{
     /*background-color: red;*/
     height: 33px;
@@ -191,3 +191,101 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     justify-content: space-evenly;
 }
+
+/*==============================DETAIL PAGE STYLING=======================================*/
+.detailPageContainer{
+    width: 950px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detailPageLeft{
+    width: 450px;
+    height: 450px;
+}
+.detailPageProductImage{
+    width: 100%;
+    height: 450px;
+    background-color: #3366CC;
+    border-radius: 10px;
+}
+.detailPageRight{
+    width: 450px;
+    height: 450px;
+    /*background-color: pink;*/
+    position: relative;
+}
+.detailPageCartButton{
+    width: 200px;
+    height: 40px;
+    background-color: #3366CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 8px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    font-family: Gadugi;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+.detailPageCartButton:hover{
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: #204ba1;
+}
+.detailPageBackButton{
+    font-family: Gadugi;
+    width: 200px;
+    height: 40px;
+    background-color: #3366CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 8px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.detailPageBackButton:hover{
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: #204ba1;
+}
+.detailPageItemName{
+    font-family: Gadugi;
+    border-bottom: 2px solid black;
+}
+.detailPageItemPrice{
+    font-family: Gadugi;
+    color: #3366CC;
+    font-size: 46px;
+}
+.detailPageItemHeat{
+    font-family: Gadugi;
+    font-size: 16px;
+}
+.detailPageItemHeat span{
+    font-family: Gadugi;
+    color: #3366CC;
+    font-size: 22px;
+}
+.detailPageItemStock{
+    font-family: Gadugi;
+    font-size: 16px;
+}
+.detailPageItemStock span{
+    font-family: Gadugi;
+    color: #3366CC;
+    font-size: 22px;
+}
+
