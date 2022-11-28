@@ -10,14 +10,20 @@ class WelcomeIndex extends SausageView {
         parent::displayHeader("One Stop Sausage Home ");
         ?>
         <div id="searchbar" class="searchBar">
-            <form method="post" action="welcome/search">
-                <input type="text" name="query-terms" id="searchtextbox" class="searchBox" placeholder="Search items..." autocomplete="off">
+            <form method="get" action="<?= BASE_URL ?>/welcome/search">
+                <input type="text" name="query-terms" id="searchtextbox" class="searchBox" placeholder="Search items..." autocomplete="off" onkeyup="handleKeyUp(event)">
                 <input type="submit" class="searchButton" value="Go" />
             </form>
             <!-- div block to display auto suggestion items -->
             <div id="suggestionDiv"></div>
-
         </div>
+<!--        <div id="searchbar">-->
+<!--            <form method="get" action="--><?//= BASE_URL ?><!--/movie/search">-->
+<!--                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search movies by title" autocomplete="off" onkeyup="handleKeyUp(event)">-->
+<!--                <input type="submit" value="Go" />-->
+<!--            </form>-->
+<!--            <div id="suggestionDiv"></div>-->
+<!--        </div>-->
           <div class="products">
 <!--                <div class="productItem">-->
 <!--                <div class="productItemImage">-->

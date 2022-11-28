@@ -12,17 +12,17 @@ class ComposerStaticIniteb1a0619c97dc056ae46e1ca8dbe09d0
         'Composer\\Autoload\\ComposerStaticIniteb1a0619c97dc056ae46e1ca8dbe09d0' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Database' => __DIR__ . '/../..' . '/application/database.class.php',
-        'Details' => __DIR__ . '/../..' . '/views/detail/sausage_detail.class.php',
+        'Details' => __DIR__ . '/../..' . '/views/items/detail/sausage_detail.class.php',
         'Dispatcher' => __DIR__ . '/../..' . '/application/dispatcher.class.php',
-        'Login' => __DIR__ . '/../..' . '/views/login.class.php',
+        'Login' => __DIR__ . '/../..' . '/views/items/login/login.class.php',
         'Sausage' => __DIR__ . '/../..' . '/models/sausage.class.php',
-        'SausageController' => __DIR__ . '/../..' . '/controllers/sausage_controller.class.php',
-        'SausageError' => __DIR__ . '/../..' . '/views/error/sausage_error.class.php',
+        'SausageError' => __DIR__ . '/../..' . '/views/items/error/sausage_error.class.php',
+        'SausageIndex' => __DIR__ . '/../..' . '/views/items/index/sausage_index.class.php',
         'SausageModel' => __DIR__ . '/../..' . '/models/sausageModel.class.php',
         'SausageView' => __DIR__ . '/../..' . '/views/index_view.class.php',
-        'Search' => __DIR__ . '/../..' . '/views/search.class.php',
+        'Search' => __DIR__ . '/../..' . '/views/items/search/search.class.php',
         'WelcomeController' => __DIR__ . '/../..' . '/controllers/welcome_controller.class.php',
-        'WelcomeIndex' => __DIR__ . '/../..' . '/views/welcome.index.class.php',
+        'WelcomeIndex' => __DIR__ . '/../..' . '/views/welcome/welcome.index.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

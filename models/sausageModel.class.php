@@ -19,6 +19,16 @@ class SausageModel
         $this->db = Database::getInstance();
         $this->dbConnection = $this->db->getConnection();
         $this->tblSausage = $this->db->getSausageTable();
+
+        //Escapes special characters in a string for use in an SQL statement. This stops SQL inject in POST vars.
+        foreach ($_POST as $key => $value) {
+            $_POST[$key] = $this->dbConnection->real_escape_string($value);
+        }
+
+        //Escapes special characters in a string for use in an SQL statement. This stops SQL Injection in GET vars
+        foreach ($_GET as $key => $value) {
+            $_GET[$key] = $this->dbConnection->real_escape_string($value);
+        }
     }
 
     /*
@@ -38,7 +48,8 @@ class SausageModel
 
             //loop through all rows
             while ($query_row = $query->fetch_assoc()) {
-                $sausage = new Sausage($query_row["sausage_id"],
+                $sausage = new Sausage(
+                    $query_row["sausage_id"],
                     $query_row["sausage_name"],
                     $query_row["price"],
                     $query_row["stock_quantity"],
@@ -94,7 +105,7 @@ class SausageModel
     public function search_items($terms) {
         $terms = explode(" ", $terms); //explode multiple terms into an array
         //select statement for AND search
-        $sql = "SELECT * FROM " . $this->db->getSausageTable() . "AND (1";
+        $sql = "SELECT * FROM " . $this->tblSausage . "," . ".rating_id AND (1";
 
         foreach ($terms as $term) {
             $sql .= " AND title LIKE '%" . $term . "%'";

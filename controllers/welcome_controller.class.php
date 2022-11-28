@@ -48,10 +48,10 @@ class WelcomeController {
     //search movies
     public function search() {
         //retrieve query terms from search form
-        $query_terms = trim($_GET['query-terms']);
+        $query_terms = trim(isset($_GET["query-terms"]));
 
         //if search term is empty, list all movies
-        if ($query_terms == "") {
+        if ($query_terms == " ") {
             $this->index();
         }
 
@@ -67,6 +67,22 @@ class WelcomeController {
         //display matched movies
         $search = new Search();
         $search->display($query_terms, $items);
+    }
+    //autosuggestion
+    public function suggest($terms) {
+        //retrieve query terms
+        $query_terms = urldecode(trim($terms));
+        $movies = $this->SausageModel->search_items($query_terms);
+
+        //retrieve all movie titles and store them in an array
+        $titles = array();
+        if ($items) {
+            foreach ($items as $item) {
+                $titles[] = $item->getName();
+            }
+        }
+
+        echo json_encode($titles);
     }
 
 

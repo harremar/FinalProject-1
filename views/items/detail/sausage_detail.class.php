@@ -21,7 +21,7 @@ class Details extends SausageView
         $stock = $sausage->getStock();
 
         echo " ID: ",$id;
-//        echo " <br/> Name: ",$sausageName;
+        echo " <br/> Name: ",$sausageName;
 //        echo " <br/> Description: ",$description;
 //        echo " <br/> Price: $",$price;
 //        echo " <br/> Heat: ",$heat;
