@@ -28,6 +28,11 @@ class Sausage
     {
         return $this->id;
     }
+    
+    //set item id
+    public function setId($id) {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
