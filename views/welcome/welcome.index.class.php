@@ -17,7 +17,7 @@ class WelcomeIndex extends SausageView {
             <!-- div block to display auto suggestion items -->
             <div id="suggestionDiv"></div>
         </div>
-<!--
+
           <div class="products">
 <!--                <div class="productItem">-->
 <!--                <div class="productItemImage">-->
