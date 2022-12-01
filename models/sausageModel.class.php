@@ -55,7 +55,7 @@ class SausageModel
                     $query_row["stock_quantity"],
                     $query_row["sausage_description"],
                     $query_row["sausage_heat"],
-                    $query_row["image_filepath"];
+                    $query_row["image_filepath"]
 
                 );
 
