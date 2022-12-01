@@ -20,7 +20,9 @@ class Details extends SausageView
         $price = $sausage->getPrice();
         $heat = $sausage->getHeat();
         $stock = $sausage->getStock();
+        $image = $sausage->getImage();
 
+        //echo "<img src='"$image"'>";
         echo " ID: ",$id;
         echo " <br/> Name: ",$sausageName;
 //        echo " <br/> Description: ",$description;
