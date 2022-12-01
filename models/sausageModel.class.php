@@ -58,7 +58,6 @@ class SausageModel
                     $query_row["sausage_description"],
                     $query_row["sausage_heat"],
                     $query_row["image_filepath"]
-
                 );
 
                 //push the sausages into the array
@@ -82,7 +81,7 @@ class SausageModel
     //getting the item details for the details page. getting the data from database
     public function view_item($id) {
         //the select ssql statement--getting table
-        $sql = "SELECT * FROM " . $this->db->getSausageTable();
+        $sql = "SELECT * FROM " . $this->db->getSausageTable() . " WHERE sausage_id = $id";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
@@ -108,10 +107,10 @@ class SausageModel
     public function search_items($terms) {
         $terms = explode(" ", $terms); //explode multiple terms into an array
         //select statement for AND search
-        $sql = "SELECT * FROM " . $this->tblSausage;
+        $sql = "SELECT * FROM " . $this->tblSausage . " WHERE 1";
 
         foreach ($terms as $term) {
-            $sql .= " WHERE ".$this->tblSausage.".sausage_name LIKE '%" . $term . "%'";
+            $sql .= " AND " . $this->tblSausage.".sausage_name LIKE '%" . $term . "%'";
         }
 
         //execute the query

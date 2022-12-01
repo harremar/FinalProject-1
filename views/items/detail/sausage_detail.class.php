@@ -22,9 +22,9 @@ class Details extends SausageView
         $stock = $sausage->getStock();
         $image = $sausage->getImage();
 
-        //echo "<img src='"$image"'>";
-        echo " ID: ",$id;
-        echo " <br/> Name: ",$sausageName;
+        //echo "<images src='"$image"'>";
+//        echo " ID: ",$id;
+//        echo " <br/> Name: ",$sausageName;
 //        echo " <br/> Description: ",$description;
 //        echo " <br/> Price: $",$price;
 //        echo " <br/> Heat: ",$heat;
@@ -33,7 +33,12 @@ class Details extends SausageView
         ?>
         <div class="detailPageContainer">
             <div class="detailPageLeft">
-                <div class="detailPageProductImage"></div>
+                <div class="detailPageProductImage">
+                    <?php
+                    $img = $sausage->getImage();
+                    echo "<img src='",BASE_URL , $img . "' alt='". $sausage->getName()."'>";
+                    ?>
+                </div>
             </div>
             <div class="detailPageRight">
                 <?php

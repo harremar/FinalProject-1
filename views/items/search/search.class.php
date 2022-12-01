@@ -22,7 +22,7 @@ class Search extends SausageView
         <hr>
 
         <!-- display all records in a grid -->
-        <div class="grid-container">
+        <div class="products">
             <?php
             if ($items === 0) {
                 echo "No item was found.<br><br><br><br><br>";
@@ -31,16 +31,30 @@ class Search extends SausageView
                 foreach ($items as $item) {
                     $id = $item->getId();
                     $name = $item->getName();
-
-                    echo "<div>", $id ,"</div>";
-                    echo "<div>", $name ,"</div>";
+                    $img = $item->getImage();
+                    echo "<div class='productItem'>";
+                    echo "<div class='productItemImage'>";
+                    echo "<img src='",BASE_URL , $img . "' alt='". $item->getName()."'>";
+                    echo "<div class='heatProduct'>", $item->getHeat(), "</div>";
+                    echo "</div>";
+                    echo "<h2>", $item->getName() ,"</h2>";
+                    echo "<p>", $item->getDescription(), "</p>";
+                    echo "<h4> $", $item->getPrice(),"</h4>";
+                    echo "<div class='productItemButtons'>";
+                    echo "<a href=",BASE_URL,"/welcome/details/$id>";
+                    echo "<button class='productItemViewButton' >View Details</button>";
+                    echo "</a>";
+                    echo "<button class='productItemCartButton'>Add to Cart</button>";
+                    echo "</div>";
+                    echo "</div>";
 
                 }
             }
             ?>
         </div>
-        <div> this will display the search items page</div>
-        <a href='<?= BASE_URL ?>/welcome'>back</a>
+
+        <a style="text-decoration: none" href='<?= BASE_URL ?>/welcome'>
+            <div class="searchPageBackButton">Back to Main Menu</div></a>
 
         <?php
         //Display the footer

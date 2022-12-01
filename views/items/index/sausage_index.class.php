@@ -36,7 +36,7 @@ class SausageIndex extends SausageView {
                         $image = BASE_URL . "/" . MOVIE_IMG . $image;
                     }
 
-                    echo "<div class='item'><p><a href='", BASE_URL, "/items/detail/$id'><img src='" . $image .
+                    echo "<div class='item'><p><a href='", BASE_URL, "/items/detail/$id'><images src='" . $image .
                         "'></a><span>$title<br>Rated $rating<br>" . $release_date->format('m-d-Y') . "</span></p></div>";
 
                 }

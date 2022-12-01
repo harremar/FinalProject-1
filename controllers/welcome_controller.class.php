@@ -110,7 +110,7 @@ class WelcomeController {
     public function suggest($terms) {
         //retrieve query terms
         $query_terms = urldecode(trim($terms));
-        $movies = $this->SausageModel->search_items($query_terms);
+        $items = $this->item_model->search_items($query_terms);
 
         //retrieve all movie titles and store them in an array
         $titles = array();

@@ -23,4 +23,4 @@ define("BASE_URL", "http://localhost/i211/FinalProject");
  ************************************************************************************/
 
 //define default path for media images
-//define("MOVIE_IMG", "www/img/movies/");
+//define("MOVIE_IMG", "www/images/movies/");

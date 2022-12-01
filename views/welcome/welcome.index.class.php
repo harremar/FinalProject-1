@@ -38,8 +38,10 @@ class WelcomeIndex extends SausageView {
             //add code here to create a new row for each sausage
             foreach($sausages as $sausage){
                 $id = $sausage->getId();
+                $img = $sausage->getImage();
                 echo "<div class='productItem'>";
                 echo "<div class='productItemImage'>";
+                echo "<img src='",BASE_URL , $img . "' alt='". $sausage->getName()."'>";
                 echo "<div class='heatProduct'>", $sausage->getHeat(), "</div>";
                 echo "</div>";
                 echo "<h2>", $sausage->getName() ,"</h2>";
@@ -52,10 +54,10 @@ class WelcomeIndex extends SausageView {
                 echo "<button class='productItemCartButton'>Add to Cart</button>";
                 echo "</div>";
                 echo "</div>";
-
             }
             ?>
             </div>
+
         <?php
         //display page footer
         parent::displayFooter();
