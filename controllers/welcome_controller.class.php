@@ -48,7 +48,9 @@ class WelcomeController {
     //search movies
     public function search() {
         //retrieve query terms from search form
-        $query_terms = trim(isset($_GET["query-terms"]));
+
+        $query_terms = isset($_GET["query-terms"]) ? trim($_GET["query-terms"]) : "" ;
+
 
         //if search term is empty, list all movies
         if ($query_terms == " ") {

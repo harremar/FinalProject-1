@@ -109,7 +109,7 @@ class SausageModel
         $sql = "SELECT * FROM " . $this->tblSausage;
 
         foreach ($terms as $term) {
-            $sql .= " WHERE sausage_name LIKE '%" . $term . "%'";
+            $sql .= " WHERE ".$this->tblSausage.".sausage_name LIKE '%" . $term . "%'";
         }
 
         //execute the query
