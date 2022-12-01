@@ -5,3 +5,7 @@
  * File: data_missing_exceptions.class.php
  * Description:
  */
+
+class DataMissingException extends Exception{
+    //There is no need of any code.
+}
