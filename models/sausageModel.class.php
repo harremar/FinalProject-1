@@ -54,7 +54,8 @@ class SausageModel
                     $query_row["price"],
                     $query_row["stock_quantity"],
                     $query_row["sausage_description"],
-                    $query_row["sausage_heat"]
+                    $query_row["sausage_heat"],
+                    $query_row["image_filepath"];
 
                 );
 
@@ -88,7 +89,7 @@ class SausageModel
             $obj = $query->fetch_object();
 
             //create an item object --building from constructor on sausage.class.php
-            $item = new Sausage($obj->sausage_id, $obj->sausage_name, $obj->price, $obj->stock_quantity, $obj->sausage_description, $obj->sausage_heat);
+            $item = new Sausage($obj->sausage_id, $obj->sausage_name, $obj->price, $obj->stock_quantity, $obj->sausage_description, $obj->sausage_heat, $obj->image_filepath);
 
             //set the id for the item
             $item->setId($id);
@@ -130,7 +131,7 @@ class SausageModel
         //loop through all rows in the returned recordsets
         while ($obj = $query->fetch_object()) {
             //create an item object --building from constructor on sausage.class.php
-            $item = new Sausage($obj->sausage_id, $obj->sausage_name, $obj->price, $obj->stock_quantity, $obj->sausage_description, $obj->sausage_heat);
+            $item = new Sausage($obj->sausage_id, $obj->sausage_name, $obj->price, $obj->stock_quantity, $obj->sausage_description, $obj->sausage_heat, $obj->image_filepath);
 
             //set the id for the movie
             $item->setId($obj->sausage_id);
