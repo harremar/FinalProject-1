@@ -17,6 +17,7 @@ class Database
         'password' => 'phpuser',
         'database' => 'one_stop_sausage',
         'tblSausage' => 'sausage'
+        'tblUser' => 'user'
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -56,6 +57,12 @@ class Database
     public function getSausageTable()
     {
         return $this->param['tblSausage'];
+    }
+    
+     //returns the name of the table storing users
+    public function getUserTable()
+    {
+        return $this->param['tblUser'];
     }
 
 }
