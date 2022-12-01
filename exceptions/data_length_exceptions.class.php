@@ -5,3 +5,7 @@
  * File: data_length_exceptions.class.php
  * Description:
  */
+
+class DataLengthException extends Exception {
+    //There is no need of any code
+}
