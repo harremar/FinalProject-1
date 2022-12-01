@@ -16,7 +16,7 @@ class Database
         'login' => 'phpuser',
         'password' => 'phpuser',
         'database' => 'one_stop_sausage',
-        'tblSausage' => 'sausage'
+        'tblSausage' => 'sausage',
         'tblUser' => 'user'
     );
     //define the database connection object
