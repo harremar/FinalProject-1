@@ -22,11 +22,47 @@ class WelcomeController {
         $sausages = $model->getSausages();
         $view->display($sausages);
     }
+    
+    //create
+    public function createAccount() {
+        //display
+        $view = new Create();
+        $view->display();
+    }
 
     //login
     public function login(){
         //display
         $view = new Login();
+        $view->display();
+    }
+    
+    //create a user account by calling the addUser method of a userModel object
+    public function register() {
+        //call the addUser method of the UserModel object
+        $result = $this->item_model->add_user();
+
+        //display result
+        $view = new Register();
+        $view->display($result);
+    }
+
+    //verify username and password by calling the verifyUser method defined in the model.
+    //It then calls the display method defined in a view class and pass true or false.
+    public function verify() {
+        //call the verifyUser method of the UserModel object
+        $result = $this->item_model->verify_user();
+
+        //display result
+        $view = new Verify();
+        $view->display($result);
+    }
+
+    //log out a user by calling the logout method defined in the model and then
+    //display a confirmation message
+    public function logout() {
+        $this->item_model->logout();
+        $view = new Logout();
         $view->display();
     }
 
