@@ -106,12 +106,11 @@ class SausageModel
     public function search_items($terms) {
         $terms = explode(" ", $terms); //explode multiple terms into an array
         //select statement for AND search
-        $sql = "SELECT * FROM " . $this->tblSausage . "," . ".rating_id AND (1";
+        $sql = "SELECT * FROM " . $this->tblSausage;
 
         foreach ($terms as $term) {
-            $sql .= " AND title LIKE '%" . $term . "%'";
+            $sql .= " WHERE sausage_name LIKE '%" . $term . "%'";
         }
-        $sql .= ")";
 
         //execute the query
         $query = $this->dbConnection->query($sql);

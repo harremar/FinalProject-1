@@ -17,13 +17,7 @@ class WelcomeIndex extends SausageView {
             <!-- div block to display auto suggestion items -->
             <div id="suggestionDiv"></div>
         </div>
-<!--        <div id="searchbar">-->
-<!--            <form method="get" action="--><?//= BASE_URL ?><!--/movie/search">-->
-<!--                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search movies by title" autocomplete="off" onkeyup="handleKeyUp(event)">-->
-<!--                <input type="submit" value="Go" />-->
-<!--            </form>-->
-<!--            <div id="suggestionDiv"></div>-->
-<!--        </div>-->
+<!--
           <div class="products">
 <!--                <div class="productItem">-->
 <!--                <div class="productItemImage">-->

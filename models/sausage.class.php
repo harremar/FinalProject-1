@@ -9,9 +9,9 @@
 class Sausage
 {
     //private attributes
-    private $id, $name, $description, $price, $stock_quantity, $heat;
+    private $id, $name, $description, $price, $stock_quantity, $heat, $image;
 
-    public function __construct($id, $name, $price, $stock_quantity, $description, $heat)
+    public function __construct($id, $name, $price, $stock_quantity, $description, $heat, $image)
     {
         $this->id = $id;
         $this->name = $name;
@@ -19,6 +19,7 @@ class Sausage
         $this->stock_quantity = $stock_quantity;
         $this->description = $description;
         $this->heat = $heat;
+        $this->image = $image;
     }
 
     /**
@@ -68,6 +69,8 @@ class Sausage
         return $this->stock_quantity;
     }
 
-
+    public function getImage(){
+        return $this->image;
+    }
 
 }
