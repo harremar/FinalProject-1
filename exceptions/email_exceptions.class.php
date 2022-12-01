@@ -5,3 +5,7 @@
  * File: email_exceptions.class.php
  * Description:
  */
+
+class EmailFormatException extends Exception{
+    //There is no need of any code
+}
