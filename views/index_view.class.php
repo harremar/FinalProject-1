@@ -22,6 +22,7 @@ class SausageView {
             <script>
                 //create the JavaScript variable for the base url
                 var base_url = "<?= BASE_URL ?>";
+
             </script>
         </head>
         <body>
@@ -37,6 +38,9 @@ class SausageView {
             <div id="right">
                 <a href='<?= BASE_URL ?>/welcome/login'>
                     <button class="loginInButton"> Login In</button>
+                </a>
+                <a href='<?= BASE_URL ?>/welcome/cart'>
+                    <button class="loginInButton"> Cart</button>
                 </a>
 
             </div>
@@ -56,9 +60,11 @@ class SausageView {
         </div>
         <div id="footer" class="foot"><br>&copy 2022 One Stop Sausage. All Rights Reserved.</div>
         <script type="text/javascript" src="<?= BASE_URL ?>/www/js/ajax_autosuggestion.js"></script>
+        <script type="text/javascript" src="<?= BASE_URL ?>/www/js/cart.js"></script>
         </body>
         </html>
         <?php
     } //end of displayFooter function
 }
 ?>
+
