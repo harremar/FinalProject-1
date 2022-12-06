@@ -39,19 +39,23 @@ class WelcomeIndex extends SausageView {
             foreach($sausages as $sausage){
                 $id = $sausage->getId();
                 $img = $sausage->getImage();
+                $name = $sausage->getName();
+                $description = $sausage->getDescription();
+                $price = $sausage->getPrice();
+                $heat = $sausage->getHeat();
                 echo "<div class='productItem'>";
                 echo "<div class='productItemImage'>";
-                echo "<img src='",BASE_URL , $img . "' alt='". $sausage->getName()."'>";
-                echo "<div class='heatProduct'>", $sausage->getHeat(), "</div>";
+                echo "<img src='",BASE_URL , $img . "' alt='". $name."'>";
+                echo "<div class='heatProduct'>", $heat, "</div>";
                 echo "</div>";
-                echo "<h2>", $sausage->getName() ,"</h2>";
-                echo "<p>", $sausage->getDescription(), "</p>";
-                echo "<h4> $", $sausage->getPrice(),"</h4>";
+                echo "<h2>", $name ,"</h2>";
+                echo "<p>", $description, "</p>";
+                echo "<h4> $", $price, " </h4>";
                 echo "<div class='productItemButtons'>";
                 echo "<a href=",BASE_URL,"/welcome/details/$id>";
                 echo "<button class='productItemViewButton' >View Details</button>";
                 echo "</a>";
-                echo "<button class='productItemCartButton'>Add to Cart</button>";
+                echo "<button class='productItemCartButton' id='$id' onclick='addToCart(id)'>Add to Cart</button>";
                 echo "</div>";
                 echo "</div>";
             }
