@@ -23,6 +23,13 @@ class WelcomeController {
         $view->display($sausages);
     }
     
+     //cart page
+    public function cart() {
+        //display
+        $view = new Cart();
+        $view->display();
+    }
+    
     //create
     public function createAccount() {
         //display
